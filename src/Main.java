@@ -30,7 +30,7 @@ public class Main {
     }
 
     public static void defineAppVersion(int mobileOs, int mobileYear) {
-        int currentYear = LocalDate.now().getYear();
+        int clientDeviceYear = 2015;
 
         String mobileOsName = switch (mobileOs) {
             case 0 -> "iOS";
@@ -38,10 +38,10 @@ public class Main {
             default -> "неизвестная ОС";
         };
 
-        if (mobileYear != currentYear) {
-            System.out.println("Установите облегченную версию приложения для " + mobileOsName);
+        if (mobileYear < clientDeviceYear) {
+            System.out.println("Установите облегченную версию приложения для " + mobileOsName + " по ссылке.");
         } else {
-            System.out.println("Установите обычную версию приложения для " + mobileOsName);
+            System.out.println("Установите обычную версию приложения для " + mobileOsName + " по ссылке.");
         }
     }
 
